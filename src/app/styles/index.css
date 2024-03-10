@@ -4,10 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 * {
-    @apply text-dark-1 ;
+    @apply text-dark-1;
 }
 body {
-    @apply bg-light-1 h-[400svh];
+    @apply bg-light-1 h-[400svh] overflow-x-hidden;
 }
 
 body:after,
@@ -21,7 +21,7 @@ body:before {
     z-index: 3023023023020;
     pointer-events: none;
     opacity: 15%;
-    color: #000000;
+    color: #6e6860;
 }
 
 body:before {

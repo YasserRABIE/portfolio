@@ -22,12 +22,12 @@ const chineseTextVariants = {
         opacity: 1,
         scale: 0.9,
         x: -30,
-        lineHeight: 1.4,
+        gap: "10px",
     },
     visible: {
         scale: 1,
         x: 0,
-        lineHeight: 1,
+        gap: 0,
         transition: {
             delayChildren: heroTitleDelay + 1.2,
             staggerChildren: 0.1,

@@ -15,7 +15,7 @@ const ChineseText = () => {
         >
             {chineseChars.map((char, index) => (
                 <motion.span
-                    className="text-[2.20rem] md:text-[1.8rem] "
+                    className="text-[2.20rem] md:text-[1.8rem] sm:text-[1.2rem] "
                     variants={slideLeft}
                     key={index}
                     custom={index}
