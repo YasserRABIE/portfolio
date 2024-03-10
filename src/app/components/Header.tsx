@@ -55,7 +55,7 @@ function Header() {
                         <span className="font-madimi text-5xl lg:text-4xl ">{`I'M`}</span>
                         <span className=" text-dark-2  font-japanese text-7xl lg:text-6xl "> ・ ヤセル</span>
                     </h1>
-                    <div className=" hidden sm:flex items-center  p-2 rounded-full w-16 h-16 bg-dark-2 pointer-events-none">
+                    <div className=" hidden sm:flex items-center  p-2 rounded-full w-16 h-16 hero-pattern rotate-12 pointer-events-none">
                         <Image src={navIcon} alt="navIcon" width={48} height={48} />
                     </div>
                 </div>

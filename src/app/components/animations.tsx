@@ -1,5 +1,5 @@
 // header variants
-const heroTitleDelay = 1.5;
+const heroTitleDelay = 2.9;
 
 const slideBottom = {
     initial: {
@@ -73,7 +73,7 @@ const slideLeft = {
 const heroTitleContainer = {
     animate: {
         transition: {
-            delayChildren: 0.5,
+            delayChildren: 2.7,
             staggerChildren: 0.01,
         },
     },

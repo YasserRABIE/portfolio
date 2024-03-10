@@ -7,7 +7,7 @@
     @apply text-dark-1;
 }
 body {
-    @apply bg-light-1 h-[400svh] overflow-x-hidden;
+    @apply bg-light-1  overflow-x-hidden;
 }
 
 body:after,

@@ -94,7 +94,12 @@ function HeroTextTitle() {
 function Hero() {
     return (
         <div className=" container flex relative items-center justify-center sm:justify-center  h-screen selection:bg-dark-2">
-            <div className="hero-pattern absolute transition-all lg:w-[60svw] sm:w-[80swv] sm:h-[80swv] lg:h-[60svw] -z-10 rounded-full overflow-hidden w-[40svw] h-[40svw] "></div>
+            <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 2, delay: 3.1, type: "spring" }}
+                className="hero-pattern absolute  lg:w-[60svw] sm:w-[80swv] sm:h-[80swv] lg:h-[60svw] -z-10 rounded-full overflow-hidden w-[40svw] h-[40svw] "
+            ></motion.div>
             <div
                 id="hero"
                 className=" flex  h-full w-full flex-col items-center justify-center sm:justify-end sm:items-start"

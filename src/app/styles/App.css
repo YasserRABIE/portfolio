@@ -3,11 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap");
 
 .hero-pattern {
-    background: rgb(239, 239, 235);
     background: linear-gradient(180deg, rgba(217, 217, 209, 1) 30%, rgb(239, 239, 235, 1) 50%);
 }
 
 #hero-text {
     line-height: 1.2;
-    
 }
