@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Yasser Web-Developer | BETA",
+    description: "Yasser Rabie A front-end developer",
 };
 
 export default function RootLayout({
@@ -15,9 +16,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
-                <link rel="icon" type="image/svg+xml" href="/src/app/favicon.ico" />
-            </head>
             <body className={inter.className}>{children}</body>
         </html>
     );

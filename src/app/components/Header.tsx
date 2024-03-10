@@ -50,13 +50,13 @@ function Header() {
                 animate="animate"
                 className="px-5 pt-10 sm:pt-5 flex w-screen z-30 absolute top-0 left-0 justify-between selection:bg-dark-2"
             >
-                <div className=" flex items-start  ">
+                <div className=" flex items-start sm:pt-5 ">
                     <h1 className=" sm:hidden">
                         <span className="font-madimi text-5xl lg:text-4xl ">{`I'M`}</span>
                         <span className=" text-dark-2  font-japanese text-7xl lg:text-6xl "> ・ ヤセル</span>
                     </h1>
-                    <div className=" hidden sm:flex items-center w-16 p-2 rounded-full shadow-xl pt-5">
-                        <Image src={navIcon} alt="navIcon" />
+                    <div className=" hidden sm:flex items-center  p-2 rounded-full w-16 h-16 bg-dark-2 pointer-events-none">
+                        <Image src={navIcon} alt="navIcon" width={48} height={48} />
                     </div>
                 </div>
                 <div className="flex text-left pr-[2svw]">
