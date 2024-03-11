@@ -14,7 +14,7 @@ function Row1() {
     return (
         <motion.span
             variants={container}
-            className=" flex gap-1 items-center md:text-[0.8rem]  sm:justify-start justify-center text-dark-2 overflow-hidden"
+            className=" flex gap-1 items-center md:text-[0.8rem] flex-wrap sm:justify-start justify-center text-dark-2 overflow-hidden"
         >
             {rows[0].map((word, index) => (
                 <motion.span variants={wordAnmi} key={index}>
@@ -42,7 +42,7 @@ function Row3() {
     return (
         <motion.span
             variants={container}
-            className=" flex gap-1 items-center md:text-[1.2rem] sm:justify-start sm:hidden text-[1.6rem] font-chinese justify-center text-dark-2 overflow-hidden"
+            className=" flex gap-1 items-center md:text-[1.2rem] text-dark-1 sm:justify-start sm:hidden text-[1.6rem] font-chinese justify-center  overflow-hidden"
         >
             {rows[2].map((word, index) => (
                 <motion.span variants={wordAnmi} key={index}>
@@ -72,14 +72,17 @@ function HeroTextTitle() {
             id="hero-text"
             className=" flex sm:mb-0 flex-col text-[6.4svw]  font-archivo font-bold lg:-translate-y-0 "
         >
-            <motion.pre className="font-archivo overflow-hidden font-bold flex" variants={heroTitle}>
+            <motion.pre className="font-archivo overflow-hidden text-dark-1 font-bold flex" variants={heroTitle}>
                 {"HI THERE, I'M".split("").map((letter, index) => (
                     <motion.span variants={letterAnmi} key={index}>
                         {letter}
                     </motion.span>
                 ))}
             </motion.pre>{" "}
-            <motion.pre variants={heroTitle} className=" flex overflow-hidden font-archivo pl-[1em] sm:pl-0 font-bold">
+            <motion.pre
+                variants={heroTitle}
+                className=" flex text-dark-1 overflow-hidden font-archivo pl-[1em] sm:pl-0 font-bold"
+            >
                 {"  "}
                 {"YASSER RABIE.".split("").map((letter, index) => (
                     <motion.span variants={letterAnmi} key={index}>
@@ -93,7 +96,7 @@ function HeroTextTitle() {
 
 function Hero() {
     return (
-        <div className=" container flex relative items-center justify-center sm:justify-center  h-screen selection:bg-dark-2">
+        <section className=" container flex relative items-center justify-center sm:justify-center  h-screen selection:bg-dark-2">
             <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -109,7 +112,7 @@ function Hero() {
                     <HeroTextContent />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -35,8 +35,8 @@ function Loader() {
     return (
         <motion.div
             initial={{ height: "100svh" }}
-            animate={{ height: 0 }}
-            transition={{ delay: 2.2, duration: 1.2 }}
+            exit={{ height: 0 }}
+            transition={{  duration: 1.2 }}
             className="w-screen fixed  top-0 left-0 h-screen pointer-events-none flex items-center z-50  bg-dark-1"
         >
             <motion.div

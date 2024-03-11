@@ -63,7 +63,6 @@ const slideLeft = {
         x: 0,
         transition: {
             duration: 0.5,
-            ease: "easeInOut",
         },
     },
 };
@@ -124,6 +123,22 @@ const letterAnmi = {
         y: "100%",
     },
     animate: {
+        y: 0,
+        transition: {
+            duration: 0.2,
+            type: "spring",
+            mass: 0.2,
+            damping: 20,
+            stiffenes: 300,
+        },
+    },
+};
+
+const sectionTitle = {
+    hidden: {
+        y: "100%",
+    },
+    visible: {
         y: 0,
         transition: {
             duration: 0.2,

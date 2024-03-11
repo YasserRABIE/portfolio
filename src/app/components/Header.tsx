@@ -8,7 +8,7 @@ const ChineseText = () => {
     const chineseChars = "向下滚动以探索".split("");
     return (
         <motion.h1
-            className="  font-chinese flex flex-col pointer-events-none  absolute right-0 top-[250%] overflow-hidden"
+            className="  font-chinese flex flex-col text-dark-1 pointer-events-none  absolute right-0 top-[180%] overflow-hidden"
             variants={chineseTextVariants}
             initial="hidden"
             animate="visible"
@@ -30,7 +30,7 @@ const ChineseText = () => {
 const Links = () => {
     const links = ["About", "Services", "Projects", "Contact"];
     return (
-        <ul id="links" className=" relative flex flex-col gap-1 font-montserrat sm:scale-75 font-bold text-[1.4rem]">
+        <ul id="links" className=" relative flex text-dark-1 flex-col gap-1 font-montserrat sm:scale-75 font-bold text-[1.4rem]">
             {links.map((link, index) => (
                 <motion.a href={`#${link}`} key={index} variants={linksVariants} whileHover="hover" whileTap="tap">
                     {link}
@@ -52,7 +52,7 @@ function Header() {
             >
                 <div className=" flex items-start sm:pt-5 ">
                     <h1 className=" sm:hidden">
-                        <span className="font-madimi text-5xl lg:text-4xl ">{`I'M`}</span>
+                        <span className="font-madimi text-5xl text-dark-1 lg:text-4xl ">{`I'M`}</span>
                         <span className=" text-dark-2  font-japanese text-7xl lg:text-6xl "> ・ ヤセル</span>
                     </h1>
                     <div className=" hidden sm:flex items-center  p-2 rounded-full w-16 h-16 hero-pattern rotate-12 pointer-events-none">
