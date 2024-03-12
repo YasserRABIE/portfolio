@@ -18,7 +18,7 @@ body:before {
     height: 100%;
     z-index: 3023;
     pointer-events: none;
-    opacity: 20%;
+    opacity: 15%;
     color: #6e6860;
 }
 

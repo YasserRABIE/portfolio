@@ -114,7 +114,6 @@ const wordAnmi = {
             type: "spring",
             mass: 0.2,
             damping: 20,
-            stiffenes: 300,
         },
     },
 };
