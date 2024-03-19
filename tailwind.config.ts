@@ -23,6 +23,7 @@ const config: Config = {
                 japanese: ["Slackside One", "cursive"],
                 chinese: ["Zhi Mang Xing", "cursive"],
                 archivo: ["Archivo Black", "sans-serif"],
+                francios: ["Francois One", "sans-serif"],
             },
             screens: {
                 "2xl": { max: "1400px" },

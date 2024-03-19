@@ -18,7 +18,6 @@ const aboutContentContiner = {
     animate: {
         transition: {
             staggerChildren: 0.02,
-            delayChildren: 1.5,
         },
     },
 };
@@ -94,7 +93,7 @@ function AboutMeText() {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="flex flex-wrap text-light-1 pl-40 text-left font-bebas leading-[4rem] text-5xl"
+                className="flex flex-wrap text-light-1 px-10 text-left font-francios leading-[4rem] text-5xl"
             >
                 {infoAboutMe.split(" ").map((word, index) => (
                     <motion.span className=" overflow-y-hidden flex" key={index}>
@@ -153,7 +152,7 @@ function About() {
                 <AboutMeText />
             </div>
             <div>
-                <div className="flex justify-center  ">
+                <div className="flex justify-center">
                     <AnimatedSectionTitle Title="・Techonlgies i use・" />
                 </div>
                 <TechonlgiesMarquee />

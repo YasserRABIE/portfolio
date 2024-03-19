@@ -36,6 +36,7 @@ export default function Home() {
             <Header />
             <Hero />
             <About />
+            
         </main>
     );
 }
