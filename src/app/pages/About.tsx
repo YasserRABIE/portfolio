@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { letterAnmi } from "./animations";
+import { letterAnmi } from "../components/animations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faJs, faGithub, faHtml5, faCss3 } from "@fortawesome/free-brands-svg-icons";
 import { useRef } from "react";

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import navIcon from "../assets/nav-icon.svg";
+import navIcon from "../assets/images/nav-icon.svg";
 import { slideBottom, slideLeft, chineseTextVariants, linksVariants } from "./animations";
 
 // components
@@ -30,7 +30,10 @@ const ChineseText = () => {
 const Links = () => {
     const links = ["About", "Services", "Projects", "Contact"];
     return (
-        <ul id="links" className=" relative flex text-dark-1 flex-col gap-1 font-montserrat sm:scale-75 font-bold text-[1.4rem]">
+        <ul
+            id="links"
+            className=" relative flex text-dark-1 flex-col gap-1 font-montserrat sm:scale-75 font-bold text-[1.4rem]"
+        >
             {links.map((link, index) => (
                 <motion.a href={`#${link}`} key={index} variants={linksVariants} whileHover="hover" whileTap="tap">
                     {link}

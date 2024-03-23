@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Hero from "./pages/Hero";
 import "./styles/App.css";
 import Lenis from "@studio-freight/lenis";
 import Loader from "./components/Loader";
-import About from "./components/About";
+import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -36,7 +36,6 @@ export default function Home() {
             <Header />
             <Hero />
             <About />
-            
         </main>
     );
 }

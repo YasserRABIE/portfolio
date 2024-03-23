@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { heroTitle, heroTitleContainer, rowsContainer, container, letterAnmi, wordAnmi } from "./animations";
+import {
+    heroTitle,
+    heroTitleContainer,
+    rowsContainer,
+    container,
+    letterAnmi,
+    wordAnmi,
+} from "../components/animations";
 
 // components
 const heroTextContent = [
