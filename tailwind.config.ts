@@ -24,16 +24,13 @@ const config: Config = {
                 chinese: ["Zhi Mang Xing", "cursive"],
                 archivo: ["Archivo Black", "sans-serif"],
                 francios: ["Francois One", "sans-serif"],
+                avantn: ["avantn", "sans-serif"],
             },
             screens: {
                 "2xl": { max: "1400px" },
-
                 xl: { max: "1279px" },
-
                 lg: { max: "1023px" },
-
                 md: { max: "767px" },
-
                 sm: { max: "639px" },
             },
         },

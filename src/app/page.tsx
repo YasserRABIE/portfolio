@@ -7,6 +7,7 @@ import Lenis from "@studio-freight/lenis";
 import Loader from "./components/Loader";
 import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
+import Cursor from "./customs/Cursor";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,13 +27,14 @@ export default function Home() {
         }, 2200);
     }, []);
     return (
-        <main>
+        <main className="relative">
             <svg viewBox="0 0 400 400" style={{ display: "none" }}>
                 <filter id="grainy-overlay">
                     <feTurbulence type="fractalNoise" baseFrequency="1.3" />
                 </filter>
             </svg>
-            <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
+            {/* <AnimatePresence>{isLoading && <Loader />}</AnimatePresence> */}
+            <Cursor />
             <Header />
             <Hero />
             <About />
