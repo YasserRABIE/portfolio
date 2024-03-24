@@ -38,7 +38,7 @@ export default function Home() {
             <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
             <Header />
             <Hero setIsHovered={setIsHovered} />
-            <About />
+            <About setIsHovered={setIsHovered} />
         </main>
     );
 }

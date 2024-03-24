@@ -85,7 +85,7 @@ function TechonlgiesMarquee() {
 const infoAboutMe =
     "I'm Yasser, a dedicated computer science student hailing from Egypt. Driven by a fervent love for coding and programming, I've discovered my true passion lies in crafting visually captivating user interfaces. With an unwavering commitment to excellence, I immerse myself in the art of front-end development, constantly seeking ways to elevate the user experience through innovative design and seamless functionality.";
 
-function AboutMeText() {
+function AboutMeText({ setIsHovered }: { setIsHovered: Function }) {
     return (
         <div>
             <motion.p
@@ -93,6 +93,12 @@ function AboutMeText() {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
+                onMouseEnter={() => {
+                    setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                    setIsHovered(false);
+                }}
                 className="flex flex-wrap text-light-1 px-10 text-left font-francios leading-[4rem] text-5xl"
             >
                 {infoAboutMe.split(" ").map((word, index) => (
@@ -144,12 +150,12 @@ function AnimatedSpanText(props: { techonlgy: string }) {
     );
 }
 
-function About() {
+function About({ setIsHovered }: { setIsHovered: Function }) {
     return (
         <section id="About" className="w-screen dark-section py-20 bg-dark-primary selection:bg-dark-2">
             <div className="mb-40 flex flex-col mt-10">
                 <AnimatedSectionTitle Title="About Me" />
-                <AboutMeText />
+                <AboutMeText setIsHovered={setIsHovered} />
             </div>
             <div>
                 <div className="flex justify-center">
