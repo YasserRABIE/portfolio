@@ -11,6 +11,7 @@ import Cursor from "./customs/Cursor";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const lenis = new Lenis();
@@ -33,10 +34,10 @@ export default function Home() {
                     <feTurbulence type="fractalNoise" baseFrequency="1.3" />
                 </filter>
             </svg>
-            {/* <AnimatePresence>{isLoading && <Loader />}</AnimatePresence> */}
-            <Cursor />
-            <Header />
-            <Hero />
+            <Cursor isHovering={isHovered} />
+            <AnimatePresence>{isLoading && <Loader setIsHovered={setIsHovered}/>}</AnimatePresence>
+            <Header  />
+            <Hero setIsHovered={setIsHovered}/>
             <About />
         </main>
     );

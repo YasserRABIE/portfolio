@@ -54,7 +54,10 @@ function Header() {
                 className="px-5 pt-10 sm:pt-5 flex w-screen z-30 absolute top-0 left-0 justify-between selection:bg-dark-2"
             >
                 <div className=" flex items-start sm:pt-5 ">
-                    <h1 className=" sm:hidden">
+                    <h1
+                        
+                        className=" sm:hidden"
+                    >
                         <span className="font-madimi text-5xl text-dark-1 lg:text-4xl ">{`I'M`}</span>
                         <span className=" text-dark-2  font-japanese text-7xl lg:text-6xl "> ・ ヤセル</span>
                     </h1>

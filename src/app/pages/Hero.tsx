@@ -77,7 +77,7 @@ function HeroTextTitle(props: { topRow: string; bottomRow: string }) {
             initial="initial"
             animate="animate"
             id="hero-text"
-            className=" flex sm:mb-0 flex-col text-[6.4svw]  font-avantn uppercase font-bold lg:-translate-y-0 "
+            className=" flex sm:mb-0 flex-col text-[6.4svw]  font-avantn uppercase font-bold lg:-translate-y-0"
         >
             <motion.pre className="font-avantn overflow-y-hidden  font-extrabold flex" variants={heroTitle}>
                 {props.topRow.split("").map((letter, index) => (
@@ -101,7 +101,7 @@ function HeroTextTitle(props: { topRow: string; bottomRow: string }) {
     );
 }
 
-function Hero() {
+function Hero({ setIsHovered }: { setIsHovered: Function }) {
     return (
         <section className=" container flex relative  items-center  justify-center sm:justify-center  h-screen selection:bg-dark-2">
             <div className="h-screen flex absolute w-full items-center justify-center">
@@ -113,8 +113,16 @@ function Hero() {
                 ></motion.div>
             </div>
             <div id="hero" className=" flex w-full flex-col items-center justify-center sm:justify-end sm:items-start">
-                <div className=" flex flex-col items-center justify-center h-screen w-full sm:items-start sm:pl-5 sm:pb-10 ">
-                    <div className="text-dark-1 w-full flex justify-center">
+                <div
+                    onMouseEnter={() => {
+                        setIsHovered(true);
+                    }}
+                    onMouseLeave={() => {
+                        setIsHovered(false);
+                    }}
+                    className=" flex flex-col items-center justify-center h-screen w-full sm:items-start sm:pl-5 sm:pb-10 "
+                >
+                    <div className="text-dark-1 w-full flex justify-center ">
                         <HeroTextTitle topRow="HI THERE, I'M" bottomRow="YASSER RABIE." />
                     </div>
                     <HeroTextContent />

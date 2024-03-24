@@ -31,13 +31,13 @@ function Pharse(props: { title: string }) {
     );
 }
 
-function Loader() {
+function Loader({ setIsHovered }: { setIsHovered: Function }) {
     return (
         <motion.div
             initial={{ height: "100svh" }}
             exit={{ height: 0 }}
-            transition={{  duration: 1.2 }}
-            className="w-screen fixed  top-0 left-0 h-screen pointer-events-none flex items-center z-50  bg-dark-1"
+            transition={{ duration: 1.2 }}
+            className="w-screen fixed  top-0 left-0 h-screen  flex items-center z-50  bg-dark-1"
         >
             <motion.div
                 initial={{ opacity: 1 }}
@@ -45,7 +45,16 @@ function Loader() {
                 transition={{ delay: 2.2, duration: 1 }}
                 className=" text-4xl  sm:text-[1.3rem] font-bold w-full justify-center overflow-y-hidden py-5 flex items-center gap-2"
             >
-                <motion.div transition={{ staggerChildren: 2 }} className=" flex flex-col items-center sm:gap-0 gap-3 ">
+                <motion.div
+                    transition={{ staggerChildren: 2 }}
+                    onMouseEnter={() => {
+                        setIsHovered(true);
+                    }}
+                    onMouseLeave={() => {
+                        setIsHovered(false);
+                    }}
+                    className=" flex flex-col items-center sm:gap-0 gap-3 "
+                >
                     <Pharse title={pharseTop} />
                     <Pharse title={pharseBottom} />
                 </motion.div>

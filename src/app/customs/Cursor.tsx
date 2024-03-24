@@ -2,8 +2,22 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect } from "react";
 
-export default function Cursor() {
+export default function Cursor({ isHovering }: { isHovering: boolean }) {
+    const cursorVariants = {
+        initial: {
+            scale: 1,
+        },
+        animate: {
+            scale: isHovering ? 13 : 1,
+            transition: {
+                type: "tween",
+                duration: 0.8,
+                ease: "backOut",
+            },
+        },
+    };
     const size = 20;
+
     const mouse = {
         x: useMotionValue(0),
         y: useMotionValue(0),
@@ -28,14 +42,17 @@ export default function Cursor() {
     });
     return (
         <motion.div
+            variants={cursorVariants}
+            initial="initial"
+            animate="animate"
             style={{
                 width: size,
                 height: size,
-                left: smoothMouse.x,
-                top: smoothMouse.y,
+                x: smoothMouse.x,
+                y: smoothMouse.y,
                 zIndex: 999999,
             }}
-            className="top-0 left-0 fixed rounded-full bg-white  mix-blend-exclusion pointer-events-none"
+            className="flex fixed rounded-full bg-white mix-blend-exclusion pointer-events-none"
         ></motion.div>
     );
 }
