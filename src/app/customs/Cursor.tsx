@@ -30,7 +30,7 @@ export default function Cursor({ isHovering }: { isHovering: boolean }) {
         y: useSpring(mouse.y, smoothOptions),
     };
 
-    const manageMouseMove = (e) => {
+    const manageMouseMove = (e: MouseEvent) => {
         const { clientX, clientY } = e;
         mouse.x.set(clientX - size / 2);
         mouse.y.set(clientY - size / 2);
