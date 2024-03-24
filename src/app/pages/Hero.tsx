@@ -113,16 +113,16 @@ function Hero({ setIsHovered }: { setIsHovered: Function }) {
                 ></motion.div>
             </div>
             <div id="hero" className=" flex w-full flex-col items-center justify-center sm:justify-end sm:items-start">
-                <div
-                    onMouseEnter={() => {
-                        setIsHovered(true);
-                    }}
-                    onMouseLeave={() => {
-                        setIsHovered(false);
-                    }}
-                    className=" flex flex-col items-center justify-center h-screen w-full sm:items-start sm:pl-5 sm:pb-10 "
-                >
-                    <div className="text-dark-1 w-full flex justify-center ">
+                <div className=" flex flex-col items-center justify-center h-screen w-full sm:items-start sm:pl-5 sm:pb-10 ">
+                    <div
+                        onMouseEnter={() => {
+                            setIsHovered(true);
+                        }}
+                        onMouseLeave={() => {
+                            setIsHovered(false);
+                        }}
+                        className="text-dark-1 w-full flex justify-center "
+                    >
                         <HeroTextTitle topRow="HI THERE, I'M" bottomRow="YASSER RABIE." />
                     </div>
                     <HeroTextContent />

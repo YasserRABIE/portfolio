@@ -35,9 +35,9 @@ export default function Home() {
                 </filter>
             </svg>
             <Cursor isHovering={isHovered} />
-            <AnimatePresence>{isLoading && <Loader setIsHovered={setIsHovered}/>}</AnimatePresence>
-            <Header  />
-            <Hero setIsHovered={setIsHovered}/>
+            <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
+            <Header />
+            <Hero setIsHovered={setIsHovered} />
             <About />
         </main>
     );
