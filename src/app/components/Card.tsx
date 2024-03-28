@@ -25,6 +25,12 @@ function Card({ link, imageSrc, titles, progress, range, targetScale, setHoverin
     const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
     return (
         <motion.div
+            onMouseEnter={() => {
+                setHoveringProject(true);
+            }}
+            onMouseLeave={() => {
+                setHoveringProject(false);
+            }}
             ref={container}
             style={{
                 scale,
@@ -32,17 +38,7 @@ function Card({ link, imageSrc, titles, progress, range, targetScale, setHoverin
             }}
             className="card-container flex items-center justify-center h-screen sticky"
         >
-            <a
-                onMouseEnter={() => {
-                    setHoveringProject(true);
-                }}
-                onMouseLeave={() => {
-                    setHoveringProject(false);
-                }}
-                href={link}
-                target="_blank"
-                className="card w-[80%] overflow-hidden rounded-[10px] relative"
-            >
+            <a href={link} target="_blank" className="card w-[80%] overflow-hidden rounded-[10px] relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <motion.img
                     style={{
