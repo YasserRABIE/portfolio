@@ -8,6 +8,7 @@ import Loader from "./components/Loader";
 import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
 import Cursor from "./customs/Cursor";
+import Projects from "./pages/Projects";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -35,10 +36,13 @@ export default function Home() {
                 </filter>
             </svg>
             <Cursor isHovering={isHovered} />
-            <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
+            {/* <AnimatePresence>{isLoading && <Loader />}</AnimatePresence> */}
             <Header />
             <Hero setIsHovered={setIsHovered} />
-            <About setIsHovered={setIsHovered} />
+            <div className=" bg-dark-primary">
+                <About setIsHovered={setIsHovered} />
+                <Projects />
+            </div>
         </main>
     );
 }

@@ -1,18 +1,10 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { letterAnmi } from "../components/animations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faJs, faGithub, faHtml5, faCss3 } from "@fortawesome/free-brands-svg-icons";
 import { useRef } from "react";
+import AnimatedSectionTitle from "../components/SectionTitle";
 
 // variants
-const sectionTitleVariants = {
-    animate: {
-        transition: {
-            delayChildren: 0.5,
-            staggerChildren: 0.03,
-        },
-    },
-};
 
 const aboutContentContiner = {
     animate: {
@@ -113,26 +105,6 @@ function AboutMeText({ setIsHovered }: { setIsHovered: Function }) {
     );
 }
 
-function AnimatedSectionTitle(props: { Title: string }) {
-    return (
-        <motion.pre
-            variants={sectionTitleVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-                once: true,
-            }}
-            className="text-light-1 font-bebas  text-[5.5rem] flex pl-10 overflow-y-hidden"
-        >
-            {props.Title.split("").map((letter, index) => (
-                <motion.span variants={letterAnmi} key={index}>
-                    {letter}
-                </motion.span>
-            ))}
-        </motion.pre>
-    );
-}
-
 function AnimatedSpanText(props: { techonlgy: string }) {
     return (
         <span className="flex overflow-x-hidden">
@@ -152,14 +124,14 @@ function AnimatedSpanText(props: { techonlgy: string }) {
 
 function About({ setIsHovered }: { setIsHovered: Function }) {
     return (
-        <section id="About" className="w-screen dark-section py-20 bg-dark-primary selection:bg-dark-2">
+        <section id="About" className="w-screen  py-20 selection:bg-dark-2">
             <div className="mb-40 flex flex-col mt-10">
                 <AnimatedSectionTitle Title="About Me" />
                 <AboutMeText setIsHovered={setIsHovered} />
             </div>
             <div>
-                <div className="flex justify-center">
-                    <AnimatedSectionTitle Title="・Techonlgies i use・" />
+                <div id="Services" className="flex justify-center">
+                    <AnimatedSectionTitle Title="Techonlgies i use" />
                 </div>
                 <TechonlgiesMarquee />
                 <div className="flex  pr-10 mt-20">
