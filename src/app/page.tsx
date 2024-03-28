@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
+    const [isProject, setIsProject] = useState(false);
 
     useEffect(() => {
         const lenis = new Lenis();
@@ -35,13 +36,13 @@ export default function Home() {
                     <feTurbulence type="fractalNoise" baseFrequency="1.3" />
                 </filter>
             </svg>
-            <Cursor isHovering={isHovered} />
+            <Cursor isHovering={isHovered} hoveringProject={isProject} />
             {/* <AnimatePresence>{isLoading && <Loader />}</AnimatePresence> */}
             <Header />
             <Hero setIsHovered={setIsHovered} />
             <div className=" bg-dark-primary">
                 <About setIsHovered={setIsHovered} />
-                <Projects />
+                <Projects  setHoveringProject={setIsProject} />
             </div>
         </main>
     );

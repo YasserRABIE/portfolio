@@ -6,13 +6,13 @@ interface props {
     link: string;
     imageSrc: string;
     titles: string[];
-    i: number;
     progress: MotionValue<number>;
     range: number[];
     targetScale: number;
+    setHoveringProject: Function;
 }
 
-function Card({ link, imageSrc, titles, i, progress, range, targetScale }: props) {
+function Card({ link, imageSrc, titles, progress, range, targetScale, setHoveringProject }: props) {
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -28,11 +28,21 @@ function Card({ link, imageSrc, titles, i, progress, range, targetScale }: props
             ref={container}
             style={{
                 scale,
-                top: `calc(-10% + ${i * 25}px)`,
+                top: 0,
             }}
             className="card-container flex items-center justify-center h-screen sticky"
         >
-            <a href={link} target="_blank" className="card w-[80%] overflow-hidden rounded-[10px] relative">
+            <a
+                onMouseEnter={() => {
+                    setHoveringProject(true);
+                }}
+                onMouseLeave={() => {
+                    setHoveringProject(false);
+                }}
+                href={link}
+                target="_blank"
+                className="card w-[80%] overflow-hidden rounded-[10px] relative"
+            >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <motion.img
                     style={{

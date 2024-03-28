@@ -1,21 +1,32 @@
 "use client";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
 
-export default function Cursor({ isHovering }: { isHovering: boolean }) {
+export default function Cursor({ isHovering, hoveringProject }: { isHovering: boolean; hoveringProject: boolean }) {
     const cursorVariants = {
         initial: {
             scale: 1,
         },
         animate: {
-            scale: isHovering ? 13 : 1,
+            scale: hoveringProject ? 5 : isHovering ? 13 : 1,
             transition: {
                 type: "tween",
                 duration: 0.8,
                 ease: "backOut",
             },
         },
+        exit: {
+            scale: 1,
+            transition: {
+                type: "tween",
+                duration: 0.2,
+
+                ease: "linear",
+            },
+        },
     };
+    const iconSize = hoveringProject ? 40 : 20;
     const size = 20;
 
     const mouse = {
@@ -41,18 +52,47 @@ export default function Cursor({ isHovering }: { isHovering: boolean }) {
         return () => window.removeEventListener("mousemove", manageMouseMove);
     });
     return (
-        <motion.div
-            variants={cursorVariants}
-            initial="initial"
-            animate="animate"
-            style={{
-                width: size,
-                height: size,
-                x: smoothMouse.x,
-                y: smoothMouse.y,
-                zIndex: 999999,
-            }}
-            className="flex fixed rounded-full bg-white mix-blend-exclusion pointer-events-none"
-        ></motion.div>
+        <>
+            {!hoveringProject && (
+                <motion.div
+                    variants={cursorVariants}
+                    initial="initial"
+                    animate="animate"
+                    style={{
+                        width: size,
+                        height: size,
+                        x: smoothMouse.x,
+                        y: smoothMouse.y,
+                        zIndex: 999999,
+                        backgroundColor: "white",
+                        mixBlendMode: "exclusion",
+                    }}
+                    className="fixed rounded-full  pointer-events-none "
+                ></motion.div>
+            )}
+            <AnimatePresence>
+                {hoveringProject && (
+                    <motion.div
+                        variants={cursorVariants}
+                        initial="initial"
+                        animate="animate"
+                        style={{
+                            width: size,
+                            height: size,
+                            x: smoothMouse.x,
+                            y: smoothMouse.y,
+                            zIndex: 999999,
+                            backgroundColor: "#E0E0DF",
+                        }}
+                        exit="exit"
+                        className=" flex items-center justify-center  fixed rounded-full  pointer-events-none p-2"
+                    >
+                        <span>
+                            <ArrowUpRight size={10} />
+                        </span>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 }

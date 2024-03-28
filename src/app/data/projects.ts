@@ -5,13 +5,13 @@ export const projects = [
         imageSrc: "/assets/images/effadah.jpeg",
     },
     {
-        titles: ["EFFADAH", "REACT"],
+        titles: ["LUICDE", "REACT"],
         link: "https://effadah.netlify.app/",
-        imageSrc: "/assets/images/effadah.jpeg",
+        imageSrc: "/assets/images/luicde.png",
     },
     {
-        titles: ["EFFADAH", "REACT"],
+        titles: ["AWWARDS", "NEXT"],
         link: "https://effadah.netlify.app/",
-        imageSrc: "/assets/images/effadah.jpeg",
+        imageSrc: "/assets/images/awwards.png",
     },
 ];
