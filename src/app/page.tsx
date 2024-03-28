@@ -37,12 +37,12 @@ export default function Home() {
                 </filter>
             </svg>
             <Cursor isHovering={isHovered} hoveringProject={isProject} />
-            {/* <AnimatePresence>{isLoading && <Loader />}</AnimatePresence> */}
+            <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
             <Header />
             <Hero setIsHovered={setIsHovered} />
             <div className=" bg-dark-primary">
                 <About setIsHovered={setIsHovered} />
-                <Projects  setHoveringProject={setIsProject} />
+                <Projects setHoveringProject={setIsProject} />
             </div>
         </main>
     );
