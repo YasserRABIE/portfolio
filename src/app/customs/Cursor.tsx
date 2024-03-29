@@ -12,7 +12,7 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
             scale: hoveringProject ? 5 : isHovering ? 13 : 1,
             transition: {
                 type: "tween",
-                duration: 0.8,
+                duration: 0.6,
                 ease: "backOut",
             },
         },
@@ -20,9 +20,8 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
             scale: 1,
             transition: {
                 type: "tween",
-                duration: 0.2,
-
-                ease: "linear",
+                duration: 0.6,
+                ease: "backInOut",
             },
         },
     };

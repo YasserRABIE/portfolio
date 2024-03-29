@@ -1,6 +1,6 @@
 export const projects = [
     {
-        titles: ["EFFADAH", "REACT", "TAILWIND CSS"],
+        titles: ["EFFADAH-UI", "REACT", "TAILWIND CSS"],
         link: "https://effadah.netlify.app/",
         imageSrc: "/assets/images/effadah.jpeg",
     },
