@@ -12,7 +12,7 @@ const loaderVariants = {
 };
 // components
 const pharseTop = ` yasser rabie `;
-const pharseBottom = `・ front-end developer ・`;
+const pharseBottom = `front-end developer`;
 
 function Pharse(props: { title: string }) {
     return (
