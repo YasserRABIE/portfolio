@@ -6,7 +6,7 @@ import {
     container,
     letterAnmi,
     wordAnmi,
-} from "../components/animations";
+} from "../animations/animations";
 
 // components
 const heroTextContent = [

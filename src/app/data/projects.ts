@@ -5,7 +5,7 @@ export const projects = [
         imageSrc: "/assets/images/effadah.jpeg",
     },
     {
-        titles: ["LUICDE", "REACT"],
+        titles: ["LUCIDE", "REACT"],
         link: "https://effadah.netlify.app/",
         imageSrc: "/assets/images/luicde.png",
     },

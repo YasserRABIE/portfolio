@@ -4,16 +4,27 @@ import Header from "./components/Header";
 import Hero from "./pages/Hero";
 import "./styles/App.css";
 import Lenis from "@studio-freight/lenis";
-import Loader from "./components/Loader";
+import Loader from "./customs/Loader";
 import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
 import Cursor from "./customs/Cursor";
 import Projects from "./pages/Projects";
+import PageTransition from "./customs/PageTransition";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
     const [isProject, setIsProject] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const [transitionTitle, setTransitionTitle] = useState("");
+
+    const startPageTransition = (pageTitle: string) => {
+        setTransitionTitle(pageTitle);
+        setIsClicked(true);
+        setTimeout(() => {
+            setIsClicked(false);
+        }, 2000);
+    };
 
     useEffect(() => {
         const lenis = new Lenis();
@@ -33,12 +44,15 @@ export default function Home() {
         <main className="relative">
             <svg viewBox="0 0 400 400" style={{ display: "none" }}>
                 <filter id="grainy-overlay">
-                    <feTurbulence type="fractalNoise" baseFrequency="1.3" />
+                    <feTurbulence type="fractalNoise" baseFrequency="2.3" />
                 </filter>
             </svg>
             <Cursor isHovering={isHovered} hoveringProject={isProject} />
-            <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
-            <Header />
+            <AnimatePresence>
+                {isLoading && <Loader />}
+                {isClicked && <PageTransition transitionTitle={transitionTitle} />}
+            </AnimatePresence>
+            <Header pageTransitions={startPageTransition} />
             <Hero setIsHovered={setIsHovered} />
             <div className=" bg-dark-primary">
                 <About setIsHovered={setIsHovered} />

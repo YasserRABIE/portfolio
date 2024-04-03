@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { letterAnmi } from "../components/animations";
+import { letterAnmi } from "../animations/animations";
 
 const sectionTitleVariants = {
     animate: {

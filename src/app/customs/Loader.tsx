@@ -1,4 +1,4 @@
-import { wordAnmi } from "./animations";
+import { wordAnmi } from "../animations/animations";
 import { motion } from "framer-motion";
 
 // variants
@@ -21,9 +21,10 @@ function Pharse(props: { title: string }) {
             variants={loaderVariants}
             initial="initial"
             animate="animate"
+            exit="exit"
         >
             {props.title.split(" ").map((letter, index) => (
-                <motion.span variants={wordAnmi} className="uppercase text-light-1" key={index}>
+                <motion.span variants={wordAnmi} className="uppercase text-white" key={index}>
                     {letter + " "}
                 </motion.span>
             ))}
@@ -34,15 +35,13 @@ function Pharse(props: { title: string }) {
 function Loader() {
     return (
         <motion.div
-            initial={{ height: "100svh" }}
+            initial={{ height: "100vh" }}
             exit={{ height: 0 }}
             transition={{ duration: 1.2 }}
-            className="w-screen fixed  top-0 left-0 h-screen  flex items-center z-50  bg-dark-1"
+            className="w-screen fixed  top-0 left-0 h-screen  flex items-center z-50  bg-dark-primary"
         >
             <motion.div
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
-                transition={{ delay: 2.2, duration: 1 }}
+                exit={{ opacity: 0, transition: { duration: 1.2 } }}
                 className=" text-4xl  sm:text-[1.3rem] font-bold w-full justify-center overflow-y-hidden py-5 flex items-center gap-2"
             >
                 <motion.div className=" flex flex-col items-center sm:gap-0 gap-3 ">
