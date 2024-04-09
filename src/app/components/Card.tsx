@@ -35,9 +35,9 @@ function Card({ link, imageSrc, titles, progress, range, targetScale, setHoverin
                 scale,
                 top: 0,
             }}
-            className="card-container flex items-center justify-center h-screen sticky"
+            className="card-container flex items-center justify-center h-screen px-5 sticky"
         >
-            <a href={link} target="_blank" className="card w-[80%] overflow-hidden rounded-[10px] relative">
+            <a href={link} target="_blank" className="card w-full overflow-hidden rounded-[10px] relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <motion.img
                     style={{

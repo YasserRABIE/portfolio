@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import Cursor from "./customs/Cursor";
 import Projects from "./pages/Projects";
 import PageTransition from "./customs/PageTransition";
+import Contact from "./pages/Contact";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -54,10 +55,11 @@ export default function Home() {
             </AnimatePresence>
             <Header pageTransitions={startPageTransition} />
             <Hero setIsHovered={setIsHovered} />
-            <div className=" bg-dark-primary">
+            <div className="bg-dark-primary pb-40">
                 <About setIsHovered={setIsHovered} />
                 <Projects setHoveringProject={setIsProject} />
             </div>
+            <Contact />
         </main>
     );
 }

@@ -33,7 +33,7 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
         y: useMotionValue(0),
     };
 
-    const smoothOptions = { damping: 30, stiffness: 300, mass: 0.4 };
+    const smoothOptions = { damping: 50, stiffness: 300, mass: 1 };
 
     const smoothMouse = {
         x: useSpring(mouse.x, smoothOptions),

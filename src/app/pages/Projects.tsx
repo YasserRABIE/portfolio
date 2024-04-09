@@ -13,7 +13,7 @@ function Projects({ setHoveringProject }: { setHoveringProject: Function }) {
     return (
         <div id="Projects" className="flex flex-col items-center selection:bg-dark-2">
             <AnimatedSectionTitle Title="projects" />
-            <div ref={container} className="main h-[310vh]">
+            <div ref={container} className="main h-[300vh]">
                 {projects.map((project, index) => {
                     const targetScale = 1 - (projects.length - index) * 0.05;
                     return (
