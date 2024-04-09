@@ -25,7 +25,7 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
             },
         },
     };
-    const iconSize = hoveringProject ? 40 : 20;
+
     const size = 20;
 
     const mouse = {
@@ -42,8 +42,8 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
 
     const manageMouseMove = (e: MouseEvent) => {
         const { clientX, clientY } = e;
-        mouse.x.set(clientX - size / 2);
-        mouse.y.set(clientY - size / 2);
+        mouse.x.set(clientX - size / 2 + size);
+        mouse.y.set(clientY - size / 2 + size);
     };
 
     useEffect(() => {
@@ -66,7 +66,7 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
                         backgroundColor: "white",
                         mixBlendMode: "exclusion",
                     }}
-                    className="fixed rounded-full  pointer-events-none "
+                    className="fixed -top-[20px] -left-[20px] rounded-full  pointer-events-none "
                 ></motion.div>
             )}
             <AnimatePresence>
@@ -84,7 +84,7 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
                             backgroundColor: "#E0E0DF",
                         }}
                         exit="exit"
-                        className=" flex items-center justify-center  fixed rounded-full  pointer-events-none p-2"
+                        className=" flex items-center justify-center  fixed -top-[20px] -left-[20px] rounded-full  pointer-events-none p-2"
                     >
                         <span>
                             <ArrowUpRight size={10} />
