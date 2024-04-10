@@ -8,10 +8,9 @@ interface props {
     progress: MotionValue<number>;
     range: number[];
     targetScale: number;
-    setHoveringProject: Function;
 }
 
-function Card({ link, imageSrc, titles, progress, range, targetScale, setHoveringProject }: props) {
+function Card({ link, imageSrc, titles, progress, range, targetScale }: props) {
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -24,12 +23,6 @@ function Card({ link, imageSrc, titles, progress, range, targetScale, setHoverin
     const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
     return (
         <motion.div
-            onMouseEnter={() => {
-                setHoveringProject(true);
-            }}
-            onMouseLeave={() => {
-                setHoveringProject(false);
-            }}
             ref={container}
             style={{
                 scale,

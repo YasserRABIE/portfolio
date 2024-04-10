@@ -7,15 +7,12 @@ import Lenis from "@studio-freight/lenis";
 import Loader from "./customs/Loader";
 import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
-import Cursor from "./customs/Cursor";
 import Projects from "./pages/Projects";
 import PageTransition from "./customs/PageTransition";
 import Contact from "./pages/Contact";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
-    const [isHovered, setIsHovered] = useState(false);
-    const [isProject, setIsProject] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [transitionTitle, setTransitionTitle] = useState("");
 
@@ -48,16 +45,16 @@ export default function Home() {
                     <feTurbulence type="fractalNoise" baseFrequency="2.3" />
                 </filter>
             </svg>
-            <Cursor isHovering={isHovered} hoveringProject={isProject} />
+
             <AnimatePresence>
                 {isLoading && <Loader />}
                 {isClicked && <PageTransition transitionTitle={transitionTitle} />}
             </AnimatePresence>
             <Header pageTransitions={startPageTransition} />
-            <Hero setIsHovered={setIsHovered} />
+            <Hero />
             <div className="bg-dark-primary pb-40">
-                <About setIsHovered={setIsHovered} />
-                <Projects setHoveringProject={setIsProject} />
+                <About />
+                <Projects />
             </div>
             <Contact />
         </main>

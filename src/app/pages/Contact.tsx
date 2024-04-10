@@ -37,7 +37,7 @@ function Contact() {
                 <AnimatedSectionTitle Title="contact" />
             </h1>
             <div className="flex gap-40 mx-20">
-                <div className=" flex-grow-[4] ">
+                <form className=" flex-grow-[4] ">
                     <div className="flex flex-col gap-5 pb-10 font-montserrat font-semibold text-2xl">
                         <label htmlFor="name" className="text-dark-1">
                             Your Name:
@@ -47,7 +47,7 @@ function Contact() {
                             type="text"
                             placeholder="Sue Maxwell"
                             id="name"
-                            className="bg-transparent p-3 placeholder:text-[#BDBDB1] border-2 rounded-lg border-[#BDBDB1] "
+                            className="form-inputs selection:bg-light-1 text-dark-1"
                         />
                     </div>
                     <div className="flex flex-col gap-5 pb-10 font-montserrat font-semibold text-2xl">
@@ -58,7 +58,7 @@ function Contact() {
                             required
                             type="email"
                             id="email"
-                            className="bg-transparent p-3 placeholder:text-[#BDBDB1] border-2 rounded-lg border-[#BDBDB1] "
+                            className="form-inputs selection:bg-light-1 text-dark-1"
                             placeholder="pal@koniwes.pe"
                         />
                     </div>
@@ -69,13 +69,19 @@ function Contact() {
                         <textarea
                             required
                             rows={6}
-                            
                             id="message"
-                            className="bg-transparent p-3 placeholder:text-[#BDBDB1] border-2 rounded-lg border-[#BDBDB1] "
+                            className="form-inputs selection:bg-light-1 text-dark-1"
                             placeholder="Tell me what's on your mind..."
                         />
                     </div>
-                </div>
+
+                    <button
+                        type="submit"
+                        className="group  bg-dark-primary p-5 rounded-[3.5rem] text-light-1 font-montserrat font-semibold"
+                    >
+                        SEND MESSAGE
+                    </button>
+                </form>
                 <div className="flex-grow-[3]">icons</div>
             </div>
         </section>

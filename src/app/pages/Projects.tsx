@@ -4,7 +4,7 @@ import AnimatedSectionTitle from "../components/SectionTitle";
 import { projects } from "../data/projects";
 import { useScroll } from "framer-motion";
 
-function Projects({ setHoveringProject }: { setHoveringProject: Function }) {
+function Projects() {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -18,7 +18,7 @@ function Projects({ setHoveringProject }: { setHoveringProject: Function }) {
                     const targetScale = 1 - (projects.length - index) * 0.05;
                     return (
                         <Card
-                            setHoveringProject={setHoveringProject}
+                            
                             key={index}
                             {...project}
                             progress={scrollYProgress}
