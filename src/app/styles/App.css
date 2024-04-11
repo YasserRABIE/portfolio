@@ -18,8 +18,8 @@ body {
 }
 
 .dark-section {
-    border-top-left-radius: 3rem;
-    border-top-right-radius: 3rem;
+    border-top-left-radius: 2.3rem;
+    border-top-right-radius: 2.3rem;
 }
 
 .form-inputs {

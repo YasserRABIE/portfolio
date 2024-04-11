@@ -75,7 +75,7 @@ function TechonlgiesMarquee() {
 }
 
 const infoAboutMe =
-    "I am Yasser, a skilled website developer who creates visually stunning and functional websites. My goal is to ensure that every project I work on is tailored to the specific needs and goals of my clients. If you need a reliable and talented developer to bring your website vision to life, I am here to help.";
+    "I'm Yasser, a dedicated computer science student hailing from Egypt. Driven by a fervent love for coding and programming, I've discovered my true passion lies in crafting visually captivating user interfaces. With an unwavering commitment to excellence, I immerse myself in the art of front-end development, constantly seeking ways to elevate the user experience through innovative design and seamless functionality.";
 
 function AboutMeText() {
     return (
@@ -128,7 +128,7 @@ function About() {
                     <AnimatedSectionTitle Title="Techonlgies i use" />
                 </div>
                 <TechonlgiesMarquee />
-                <div className="flex pr-10 mt-20">
+                <div className="flex  pr-10 mt-20">
                     <span className=" h-fit">
                         <AnimatedSectionTitle Title="i also use" />
                     </span>
