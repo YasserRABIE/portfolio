@@ -1,7 +1,7 @@
 "use client";
-import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion";
-import React, { useEffect } from "react";
+import { AnimatePresence, motion, useMotionValue } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import React, { useEffect } from "react";
 
 export default function Cursor({ isHovering, hoveringProject }: { isHovering: boolean; hoveringProject: boolean }) {
     const cursorVariants = {
@@ -36,8 +36,8 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
     const smoothOptions = { damping: 30, stiffness: 300, mass: 0.4 };
 
     const smoothMouse = {
-        x: useSpring(mouse.x, smoothOptions),
-        y: useSpring(mouse.y, smoothOptions),
+        x: mouse.x,
+        y: mouse.y,
     };
 
     const manageMouseMove = (e: MouseEvent) => {
@@ -84,11 +84,9 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
                             backgroundColor: "#E0E0DF",
                         }}
                         exit="exit"
-                        className=" flex items-center justify-center  fixed -top-[20px] -left-[20px] rounded-full  pointer-events-none p-2"
+                        className=" flex items-center justify-center  fixed -top-[20px] -left-[20px] rounded-full  pointer-events-none "
                     >
-                        <span>
-                            <ArrowUpRight size={10} />
-                        </span>
+                        <ArrowUpRight size={10} />
                     </motion.div>
                 )}
             </AnimatePresence>

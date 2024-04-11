@@ -9,8 +9,12 @@ import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
 import Projects from "./pages/Projects";
 import PageTransition from "./customs/PageTransition";
+import Contact from "./pages/Contact";
+import Cursor from "./customs/Cursor";
 
 export default function Home() {
+    const [isHovered, setIsHovered] = useState(false);
+    const [isProject, setIsProject] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [isClicked, setIsClicked] = useState(false);
     const [transitionTitle, setTransitionTitle] = useState("");
@@ -44,24 +48,18 @@ export default function Home() {
                     <feTurbulence type="fractalNoise" baseFrequency="2.3" />
                 </filter>
             </svg>
-
+            <Cursor isHovering={isHovered} hoveringProject={isProject} />
             <AnimatePresence>
                 {isLoading && <Loader />}
                 {isClicked && <PageTransition transitionTitle={transitionTitle} />}
             </AnimatePresence>
             <Header pageTransitions={startPageTransition} />
-<<<<<<< HEAD
-            <Hero />
-            <div className="bg-dark-primary pb-40">
-                <About />
-                <Projects />
-=======
             <Hero setIsHovered={setIsHovered} />
             <div className=" bg-dark-primary">
                 <About setIsHovered={setIsHovered} />
                 <Projects setHoveringProject={setIsProject} />
->>>>>>> parent of 4f50a02 (.)
             </div>
+            <Contact />
         </main>
     );
 }

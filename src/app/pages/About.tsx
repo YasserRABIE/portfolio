@@ -75,9 +75,9 @@ function TechonlgiesMarquee() {
 }
 
 const infoAboutMe =
-    "I'm Yasser, a dedicated computer science student hailing from Egypt. Driven by a fervent love for coding and programming, I've discovered my true passion lies in crafting visually captivating user interfaces. With an unwavering commitment to excellence, I immerse myself in the art of front-end development, constantly seeking ways to elevate the user experience through innovative design and seamless functionality.";
+    "I am Yasser, a skilled website developer who creates visually stunning and functional websites. My goal is to ensure that every project I work on is tailored to the specific needs and goals of my clients. If you need a reliable and talented developer to bring your website vision to life, I am here to help.";
 
-function AboutMeText() {
+function AboutMeText({ setIsHovered }: { setIsHovered: Function }) {
     return (
         <div>
             <motion.p
@@ -85,6 +85,12 @@ function AboutMeText() {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
+                onMouseEnter={() => {
+                    setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                    setIsHovered(false);
+                }}
                 className="flex flex-wrap text-light-1 px-10 text-left font-francios leading-[4rem] text-5xl"
             >
                 {infoAboutMe.split(" ").map((word, index) => (
@@ -116,12 +122,12 @@ function AnimatedSpanText(props: { techonlgy: string }) {
     );
 }
 
-function About() {
+function About({ setIsHovered }: { setIsHovered: Function }) {
     return (
         <section id="About" className="w-screen  py-20 selection:bg-dark-2">
             <div className="mb-40 flex flex-col mt-10">
                 <AnimatedSectionTitle Title="About Me" />
-                <AboutMeText />
+                <AboutMeText setIsHovered={setIsHovered} />
             </div>
             <div>
                 <div id="Services" className="flex justify-center">
