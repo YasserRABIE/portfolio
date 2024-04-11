@@ -1,3 +1,14 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 .hero-pattern {
     background: linear-gradient(180deg, rgba(217, 217, 209, 1) 30%, rgb(239, 239, 235, 1) 50%);
 }
