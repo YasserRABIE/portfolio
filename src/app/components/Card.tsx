@@ -44,7 +44,10 @@ function Card({ link, imageSrc, titles, progress, range, targetScale }: props) {
                 <span className="absolute bottom-5 left-5 font-montserrat text-lg">
                     {titles.map((title, index) => {
                         return (
-                            <span key={index} className=" ml-2 font-bold rounded-[25px] px-5 py-2 bg-black text-white">
+                            <span
+                                key={index}
+                                className=" ml-2 font-bold rounded-[25px] border-[3px] px-5 py-2 border-white text-white"
+                            >
                                 {title}
                             </span>
                         );
