@@ -38,10 +38,10 @@ function Loader() {
             initial={{ height: "100vh" }}
             exit={{ height: 0 }}
             transition={{ duration: 1.2 }}
-            className="w-screen fixed  top-0 left-0 h-screen  flex items-center z-50  bg-dark-primary"
+            className="w-screen fixed  top-0 left-0 h-screen overflow-hidden flex items-center z-50  bg-dark-primary"
         >
             <motion.div
-                exit={{ opacity: 0, transition: { duration: 1.2 } }}
+                exit={{ transition: { duration: 1.2 } }}
                 className=" text-4xl  sm:text-[1.3rem] font-bold w-full justify-center overflow-y-hidden py-5 flex items-center gap-2"
             >
                 <motion.div className=" flex flex-col items-center sm:gap-0 gap-3 ">

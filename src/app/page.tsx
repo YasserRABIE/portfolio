@@ -41,6 +41,7 @@ export default function Home() {
             setIsLoading(false);
         }, 2200);
     }, []);
+
     return (
         <main className="relative">
             <svg viewBox="0 0 400 400" style={{ display: "none" }}>
