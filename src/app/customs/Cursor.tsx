@@ -3,11 +3,23 @@ import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-export default function Cursor({ isHovering, hoveringProject }: { isHovering: boolean; hoveringProject: boolean }) {
+export default function Cursor({
+    isHovering,
+    hoveringProject,
+    isContactLink,
+}: {
+    isHovering: boolean;
+    hoveringProject: boolean;
+    isContactLink: boolean;
+}) {
     const size = 20;
     const labelSize = 100;
     const cursor = useRef(null);
     const cursorLabel = useRef(null);
+    const dynamicScale = () => {
+        const scale = isHovering ? 13 : hoveringProject ? 7 : isContactLink ? 2.8 : 1;
+        return scale;
+    };
     const labelVariants = {
         hidden: {
             opacity: 0,
@@ -33,7 +45,7 @@ export default function Cursor({ isHovering, hoveringProject }: { isHovering: bo
             scale: 1,
         },
         animate: {
-            scale: isHovering ? 13 : hoveringProject ? 7 : 1,
+            scale: dynamicScale(),
             transition: {
                 type: "spring",
                 duration: 0.7,

@@ -1,8 +1,8 @@
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faJs, faGithub, faHtml5, faCss3 } from "@fortawesome/free-brands-svg-icons";
-import { useRef } from "react";
+import { faReact, faJs, faHtml5, faCss3, faGit } from "@fortawesome/free-brands-svg-icons";
 import AnimatedSectionTitle from "../components/SectionTitle";
+import { faGitAlt } from "@fortawesome/free-brands-svg-icons/faGitAlt";
 
 // variants
 
@@ -41,25 +41,13 @@ const slideToRight = {
 // components
 
 function Techonlgies() {
-    const sliderContainer = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: sliderContainer,
-        offset: ["center 0.9", "center 0.45"],
-    });
-    const scrollProgress = useTransform(scrollYProgress, [0, 1], [-1600, 0]);
-    const springyProgress = useSpring(scrollProgress, { mass: 0.5, damping: 20, stiffness: 50 });
-
     return (
-        <motion.span
-            ref={sliderContainer}
-            style={{ x: springyProgress, opacity: scrollYProgress }}
-            className=" w-screen  flex items-center justify-around"
-        >
+        <motion.span className=" w-screen  flex items-center justify-around">
             <FontAwesomeIcon icon={faHtml5} className=" min-w-[100px]  text-light-1" fontSize={80} />
             <FontAwesomeIcon icon={faCss3} className=" min-w-[100px]  text-light-1" fontSize={80} />
             <FontAwesomeIcon icon={faReact} className=" min-w-[100px]  text-light-1" fontSize={80} />
             <FontAwesomeIcon icon={faJs} className=" min-w-[100px]  text-light-1" fontSize={80} />
-            <FontAwesomeIcon icon={faGithub} className=" min-w-[100px]  text-light-1" fontSize={80} />
+            <FontAwesomeIcon icon={faGitAlt} className=" min-w-[100px]  text-light-1" fontSize={80} />
         </motion.span>
     );
 }

@@ -15,6 +15,7 @@ import Cursor from "./customs/Cursor";
 export default function Home() {
     const [isHovered, setIsHovered] = useState(false);
     const [isProject, setIsProject] = useState(false);
+    const [isContactLink, setIsContactLink] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [isClicked, setIsClicked] = useState(false);
     const [transitionTitle, setTransitionTitle] = useState("");
@@ -49,7 +50,7 @@ export default function Home() {
                     <feTurbulence type="fractalNoise" baseFrequency="2.3" />
                 </filter>
             </svg>
-            <Cursor isHovering={isHovered} hoveringProject={isProject} />
+            <Cursor isHovering={isHovered} hoveringProject={isProject} isContactLink={isContactLink} />
             <AnimatePresence>
                 {isLoading && <Loader />}
                 {isClicked && <PageTransition transitionTitle={transitionTitle} />}
@@ -60,7 +61,7 @@ export default function Home() {
                 <About setIsHovered={setIsHovered} />
                 <Projects setHoveringProject={setIsProject} />
             </div>
-            <Contact />
+            <Contact setIsContactLink={setIsContactLink}/>
         </main>
     );
 }
