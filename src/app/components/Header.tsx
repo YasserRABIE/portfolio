@@ -8,7 +8,7 @@ const ChineseText = () => {
     const chineseChars = "向下滚动以探索".split("");
     return (
         <motion.h1
-            className="  font-chinese flex flex-col text-dark-1 pointer-events-none  absolute right-0 top-[180%] overflow-hidden"
+            className="font-chinese flex flex-col text-dark-1 pointer-events-none  absolute right-0 top-[180%] overflow-hidden"
             variants={chineseTextVariants}
             initial="hidden"
             animate="visible"
