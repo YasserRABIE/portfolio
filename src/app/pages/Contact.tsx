@@ -157,7 +157,7 @@ function Contact({ setIsContactLink }: { setIsContactLink: Function }) {
                             </p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-10 ">
+                    <div className="flex items-center gap-10">
                         <GsapMagnetic>
                             <a
                                 onMouseEnter={() => {
