@@ -5,7 +5,7 @@ import "../app/styles/index.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "YasserRABIE | Developer && Sudent",
+    title: "YasserRABIE | Developer",
     description: "Yasser Rabie A front-end developer",
 };
 
