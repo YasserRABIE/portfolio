@@ -19,7 +19,7 @@ function AnimatedSectionTitle(props: { Title: string }) {
          viewport={{
             once: true,
          }}
-         className="text-light-1 font-bebas  text-[5.5rem] lg:text-[4.5rem] md:text-[2.5rem] flex pl-10 overflow-y-hidden"
+         className="text-light-2 font-bebas text-[5.5rem] lg:text-[4.5rem] md:text-[2.5rem] flex pl-10 md:pl-5 overflow-y-hidden"
       >
          {props.Title.split("").map((letter, index) => (
             <motion.span variants={letterAnmi} key={index}>
