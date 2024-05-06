@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { letterAnmi } from "../animations/animations";
+import { letterAnmi, linksVariants } from "../animations/animations";
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -24,7 +24,7 @@ function AnimatedSectionTitle(props: { Title: string }) {
          viewport={{
             once: true,
          }}
-         className="text-dark-1 mt-20 font-bebas  text-[5.5rem] flex  pl-10 overflow-y-hidden"
+         className="text-dark-1 mt-20 font-bebas  text-[5.5rem] lg:text-[4.5rem] md:text-[2.5rem] flex   overflow-y-hidden"
       >
          {props.Title.split("").map((letter, index) => (
             <motion.span variants={letterAnmi} key={index}>
@@ -77,9 +77,9 @@ function Contact({ setIsContactLink }: { setIsContactLink: Function }) {
          <h1 className="flex justify-center">
             <AnimatedSectionTitle Title="contact" />
          </h1>
-         <div className="flex gap-40 mx-20">
+         <div className="flex gap-40 mx-20 lg:flex-col lg:mx-5 lg:gap-10">
             <form className=" flex-grow-[4]" onSubmit={sendEmail}>
-               <div className="flex flex-col gap-5 pb-10 font-montserrat font-semibold text-2xl">
+               <div className="flex flex-col pb-10 font-montserrat font-semibold text-2xl">
                   <label htmlFor="name" className="text-dark-1">
                      Your Name:
                   </label>
@@ -96,7 +96,7 @@ function Contact({ setIsContactLink }: { setIsContactLink: Function }) {
                      className="form-inputs selection:bg-light-1 text-dark-1"
                   />
                </div>
-               <div className="flex flex-col gap-5 pb-10 font-montserrat font-semibold text-2xl">
+               <div className="flex flex-col pb-10 font-montserrat font-semibold text-2xl">
                   <label htmlFor="email" className="text-dark-1">
                      Your Email:
                   </label>
@@ -113,7 +113,7 @@ function Contact({ setIsContactLink }: { setIsContactLink: Function }) {
                      placeholder="pal@koniwes.pe"
                   />
                </div>
-               <div className="flex flex-col gap-5 pb-10 font-montserrat font-semibold text-2xl">
+               <div className="flex flex-col pb-10 font-montserrat font-semibold text-2xl">
                   <label htmlFor="message" className="text-dark-1">
                      Your Message:
                   </label>
@@ -130,16 +130,20 @@ function Contact({ setIsContactLink }: { setIsContactLink: Function }) {
                      placeholder="Tell me what's on your mind..."
                   />
                </div>
-               <input
+               <motion.input
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
+                  variants={linksVariants}
                   type="submit"
                   className=" cursor-pointer bg-dark-primary p-5 rounded-[3.5rem] text-light-1 font-montserrat font-semibold"
                   value={submitBtn}
                />
             </form>
             <div id="circled-links" className="flex-grow-[3] flex flex-col items-start justify-start">
-               <div className="mb-10 border-b-2 border-dark-1 pb-10">
-                  <h1 className="text-3xl font-bold text-dark-1 font-montserrat">Contact Details</h1>
-                  <div className="text-dark-1 pt-10 ">
+               <div className="mb-10 border-b-2 lg:w-full border-dark-1 pb-10">
+                  <h1 className="text-3xl font-bold text-dark-1 font-montserrat">Contact Details:</h1>
+                  <div className="text-dark-1 pt-10 md:pt-5">
                      <p className="text-xl pb-5">
                         <span className="block pb-[1px] font-bold">Email:</span>
                         <motion.a className="text-dark-2 underline" href="mailto:yasser.rabie2024@gmail.com">
@@ -149,7 +153,7 @@ function Contact({ setIsContactLink }: { setIsContactLink: Function }) {
                      <p className="text-xl">
                         <span className="block pb-[1px] font-bold">Phone:</span>
                         <motion.a
-                           className="text-dark-2 underline underline-offset-2"
+                           className="text-dark-2 underline  underline-offset-2"
                            href="https://wa.me/+201028149995"
                         >
                            +201028149995
