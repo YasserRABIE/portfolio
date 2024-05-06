@@ -59,7 +59,7 @@ export default function Home() {
             </AnimatePresence>
             <Header pageTransitions={startPageTransition} />
             <Hero setIsHovered={setIsHovered} />
-            <div className=" bg-dark-primary">
+            <div className="bg-dark-primary">
                <About setIsHovered={setIsHovered} />
                <Projects setHoveringProject={setIsProject} />
             </div>
