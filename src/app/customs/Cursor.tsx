@@ -55,10 +55,10 @@ export default function Cursor({
    };
 
    useEffect(() => {
-      const xMoveCursor = gsap.quickTo(cursor.current, "left", { duration: 0.8, ease: "power3" });
-      const yMoveCursor = gsap.quickTo(cursor.current, "top", { duration: 0.8, ease: "power3" });
-      const xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", { duration: 0.7, ease: "power3" });
-      const yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", { duration: 0.7, ease: "power3" });
+      const xMoveCursor = gsap.quickTo(cursor.current, "left", { duration: 0.5, ease: "power3" });
+      const yMoveCursor = gsap.quickTo(cursor.current, "top", { duration: 0.5, ease: "power3" });
+      const xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", { duration: 0.4, ease: "power3" });
+      const yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", { duration: 0.4, ease: "power3" });
 
       window.addEventListener("mousemove", (e) => {
          const { clientX, clientY } = e;
@@ -90,7 +90,7 @@ export default function Cursor({
                backgroundColor: "white",
                mixBlendMode: hoveringProject ? "normal" : "exclusion",
             }}
-            className="fixed rounded-full -top-[20px] -left-[20px] pointer-events-none  md:hidden"
+            className="fixed rounded-full -top-[20px] -left-[20px] pointer-events-none  lg:hidden"
          ></motion.div>
          <motion.p
             ref={cursorLabel}
@@ -100,7 +100,7 @@ export default function Cursor({
                width: labelSize,
                height: labelSize,
             }}
-            className="fixed rounded-full text-3xl flex items-center font-mono justify-center font-semibold z-[9999999] pointer-events-none opacity-0 md:hidden"
+            className="fixed rounded-full text-3xl flex items-center font-mono justify-center font-semibold z-[9999999] pointer-events-none opacity-0 lg:hidden"
          >
             VIEW
          </motion.p>
