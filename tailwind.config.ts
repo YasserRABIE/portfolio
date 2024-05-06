@@ -20,7 +20,7 @@ const config: Config = {
             "light-2": "#DEDED7",
             "dark-1": "#3A3733",
             "dark-2": "#6E6860",
-            "dark-primary": "#202020",
+            "dark-primary": "#181818",
             "dark-secondry": "#020617",
          },
          fontFamily: {
