@@ -43,11 +43,26 @@ const slideToRight = {
 function Techonlgies() {
    return (
       <motion.span className=" w-screen  flex items-center justify-around">
-         <FontAwesomeIcon icon={faHtml5} className=" min-w-[100px]  text-light-1" fontSize={80} />
-         <FontAwesomeIcon icon={faCss3} className=" min-w-[100px]  text-light-1" fontSize={80} />
-         <FontAwesomeIcon icon={faReact} className=" min-w-[100px]  text-light-1" fontSize={80} />
-         <FontAwesomeIcon icon={faJs} className=" min-w-[100px]  text-light-1" fontSize={80} />
-         <FontAwesomeIcon icon={faGitAlt} className=" min-w-[100px]  text-light-1" fontSize={80} />
+         <FontAwesomeIcon
+            icon={faHtml5}
+            className=" min-w-[100px] md:min-w-[50px] text-white text-[80px] lg:text-[60px] md:text-[40px]"
+         />
+         <FontAwesomeIcon
+            icon={faCss3}
+            className=" min-w-[100px] md:min-w-[50px] text-white text-[80px] lg:text-[60px] md:text-[40px]"
+         />
+         <FontAwesomeIcon
+            icon={faReact}
+            className=" min-w-[100px] md:min-w-[50px] text-white text-[80px] lg:text-[60px] md:text-[40px]"
+         />
+         <FontAwesomeIcon
+            icon={faJs}
+            className=" min-w-[100px] md:min-w-[50px] text-white text-[80px] lg:text-[60px] md:text-[40px]"
+         />
+         <FontAwesomeIcon
+            icon={faGitAlt}
+            className=" min-w-[100px] md:min-w-[50px] text-white text-[80px] lg:text-[60px] md:text-[40px]"
+         />
       </motion.span>
    );
 }
@@ -55,7 +70,7 @@ function Techonlgies() {
 function TechonlgiesMarquee() {
    return (
       <div>
-         <span className=" border-light-1 border-y-[6px]  py-5 mt-20 flex flex-nowrap overflow-x-hidden ">
+         <span className=" border-light-1 border-y-[6px] lg:border-y-[4px] sm:border-y-[3px] py-5  flex flex-nowrap overflow-x-hidden ">
             <Techonlgies />
          </span>
       </div>
@@ -79,10 +94,10 @@ function AboutMeText({ setIsHovered }: { setIsHovered: Function }) {
             onMouseLeave={() => {
                setIsHovered(false);
             }}
-            className="flex flex-wrap text-light-1 px-10 text-left  font-francios leading-[4rem] text-5xl lg:text-[1.8rem] lg:leading-[2rem] sm:text-[1rem] sm:leading-[1.2rem]"
+            className="flex flex-wrap text-white px-10 text-left  leading-[3.3rem] text-[2.6rem] lg:text-[1.8rem] lg:leading-[2rem] sm:text-[1rem] sm:leading-[1.2rem]"
          >
             {infoAboutMe.split(" ").map((word, index) => (
-               <motion.span className=" overflow-y-hidden flex" key={index}>
+               <motion.span className="overflow-y-hidden flex" key={index}>
                   <motion.span variants={wordAnmi} className="mr-[10px] md:mr-1">
                      {word}
                   </motion.span>
@@ -101,10 +116,10 @@ function AnimatedSpanText(props: { techonlgy: string }) {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="relative w-[500px] flex flex-nowrap "
+            className="relative flex flex-nowrap"
          >
-            <li className="px-4 w-full">{props.techonlgy}</li>
-            <li className=" absolute top-0 px-4 w-full -left-[100%]">{props.techonlgy}</li>
+            <li className=" w-full">{props.techonlgy}</li>
+            <li className=" absolute top-0  w-full -left-[100%]">{props.techonlgy}</li>
          </motion.span>
       </span>
    );
@@ -112,8 +127,8 @@ function AnimatedSpanText(props: { techonlgy: string }) {
 
 function About({ setIsHovered }: { setIsHovered: Function }) {
    return (
-      <section id="About" className="w-screen  py-20 selection:bg-dark-2">
-         <div className="mb-40 flex flex-col mt-10">
+      <section id="About" className="w-screen py-20 md:py-0 selection:bg-dark-2">
+         <div className="mb-10 flex flex-col mt-10">
             <AnimatedSectionTitle Title="About Me" />
             <AboutMeText setIsHovered={setIsHovered} />
          </div>
@@ -122,12 +137,12 @@ function About({ setIsHovered }: { setIsHovered: Function }) {
                <AnimatedSectionTitle Title="Techonlgies i use" />
             </div>
             <TechonlgiesMarquee />
-            <div className="flex  pr-10 mt-20">
-               <span className=" h-fit">
-                  <AnimatedSectionTitle Title="i also use" />
+            <div className="flex pr-10 mt-10">
+               <span className="flex-1 h-fit">
+                  <AnimatedSectionTitle Title="i also use:" />
                </span>
-               <div className="flex-1 flex justify-end">
-                  <ul className="text-light-1 font-bebas pr-10 text-[5rem]">
+               <div className="flex justify-end">
+                  <ul className="text-white font-bebas text-[5rem] lg:text-[4rem] md:text-[3rem] sm:text-[1.7rem] flex flex-col items-end">
                      <AnimatedSpanText techonlgy="framer motion" />
                      <AnimatedSpanText techonlgy="Tailwind Css" />
                      <AnimatedSpanText techonlgy="next.js" />
