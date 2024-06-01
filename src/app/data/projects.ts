@@ -5,13 +5,8 @@ export const projects = [
       imageSrc: "/assets/images/effadah.jpeg",
    },
    {
-      titles: ["LUCIDE"],
-      link: "https://effadah.netlify.app/",
-      imageSrc: "/assets/images/luicde.png",
-   },
-   {
-      titles: ["AWWARDS"],
-      link: "https://effadah.netlify.app/",
-      imageSrc: "/assets/images/awwards.png",
+      titles: ["TODO-APP"],
+      link: "https://todo-app-front-end-delta.vercel.app/",
+      imageSrc: "/assets/images/todo.jpeg",
    },
 ];
